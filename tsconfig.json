@@ -1,0 +1,51 @@
+{
+  // 编译选项
+  "compilerOptions": {
+    "target": "esnext",// 编译输出目标 ES 版本
+    "module": "esnext",// 采用的模块系统 
+    "strict": true,// 以严格模式解析
+    "jsx": "preserve",
+    "importHelpers": true,// 从 tslib 导入外部帮助库: 比如__extends，__rest等
+    "moduleResolution": "node",// 如何处理模块
+    "experimentalDecorators": true,// 启用装饰器
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,// 启用设计类型元数据（用于反射
+    "isolatedModules": false,// 将每个文件作为单独的模块
+    "removeComments": false,// 移除注释
+    "listFiles": true,// 编译过程中打印文件名
+    "strictPropertyInitialization": false,// 定义一个变量就必须给它一个初始值
+    "noImplicitThis": false,// 忽略 this 的类型检查, Raise error on this expressions with an implied any type
+    "noImplicitAny": false,// 在表达式和声明上有隐含的any类型时报错
+    "noImplicitReturns": false,// 不是函数的所有返回路径都有返回值时报错
+    "allowSyntheticDefaultImports": true,// 允许从没有设置默认导出的模块中默认导入
+    "allowJs": true,// 允许编译javascript文件
+    "sourceMap": true,// 是否包含可以用于 debug 的 sourceMa
+    "pretty": true,// 给错误和消息设置样式，使用颜色和上下文
+    "baseUrl": ".",// 解析非相对模块名的基准目录 
+    "types": [// 设置引入的定义文件 
+      "webpack-env"
+    ],
+    "paths": {// 指定特殊模块的路径
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [// 编译过程中需要引入的库文件的列表
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [// ts 管理的文件
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+ ],
+  "exclude": [// ts 排除的文件
+    "node_modules"
+  ]
+}
